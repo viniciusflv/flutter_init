@@ -37,6 +37,24 @@ class HomePage extends StatelessWidget with Utils {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: FloatingActionButton(
+              heroTag: "btn1",
+              child: const Icon(Icons.add),
+              onPressed: () =>
+                  context.bloc<CounterCubit>().add(),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            child: FloatingActionButton(
+              heroTag: "btn2",
+              child: const Icon(Icons.remove),
+              onPressed: () =>
+                  context.bloc<CounterCubit>().remove(),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            child: FloatingActionButton(
               child: const Icon(Icons.brightness_6),
               onPressed: () => context.bloc<ThemeCubit>().toggleTheme(),
             ),

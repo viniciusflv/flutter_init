@@ -3,15 +3,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_init/providers/Counter/Cubit.dart';
 import 'package:flutter_init/providers/Providers.dart';
 import 'package:flutter_init/providers/Theme/Cubit.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CounterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Animais')),
-      body: Providers.connector<CounterCubit, int>((count) => Center(
-        child: Text('$count',
-        style: Theme.of(context).textTheme.headline1),
+      body: Providers.connector<CounterCubit, int>((count) => (
+        ListView.builder(
+          itemCount: count < 0 ? count * -1 : count,
+          itemBuilder: (_, i) => SvgPicture.asset(
+            'lib/assets/svg/cat.svg',
+            color: Colors.blue,
+            semanticsLabel: 'Cat'
+          )
+        )
       )),
       floatingActionButton: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
