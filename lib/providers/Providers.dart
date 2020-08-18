@@ -9,7 +9,10 @@ export 'package:flutter_init/providers/Theme/Cubit.dart';
 class Providers {
   static Widget connector<CubitResource extends Cubit<Model>, Model>(
     Widget Function(Model) cb,
-  ) => BlocBuilder<CubitResource, Model>(builder: (_, resource) => cb(resource));
+  ) =>
+      BlocBuilder<CubitResource, Model>(
+        builder: (_, resource) => cb(resource),
+      );
 
   static List<BlocProvider<Cubit<dynamic>>> global = [
     BlocProvider<CounterCubit>(create: (_) => CounterCubit()),

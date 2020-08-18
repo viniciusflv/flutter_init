@@ -5,9 +5,9 @@ import 'package:flutter_init/themes.dart';
 class ThemeCubit extends Cubit<ThemeData> {
   ThemeCubit() : super(Themes.lightTheme);
 
-    void toggleTheme() {
+  void toggleTheme() {
     emit(state.brightness == Brightness.dark
-      ? Themes.lightTheme
-      : Themes.darkTheme);
+        ? Themes.lightTheme
+        : Themes.darkTheme);
   }
 }

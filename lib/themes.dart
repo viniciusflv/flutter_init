@@ -14,9 +14,8 @@ class Themes {
     primaryColorLight: Color.fromRGBO(250, 250, 250, 1),
     disabledColor: Color.fromRGBO(150, 150, 150, 1),
     appBarTheme: AppBarTheme(
-      color: Colors.blue,
-      actionsIconTheme: IconThemeData(color: Colors.white)
-    ),
+        color: Colors.blue,
+        actionsIconTheme: IconThemeData(color: Colors.white)),
     bottomAppBarTheme: BottomAppBarTheme(
       color: Colors.black,
       elevation: 8,

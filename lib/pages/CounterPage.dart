@@ -10,16 +10,16 @@ class CounterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Animais')),
-      body: Providers.connector<CounterCubit, int>((count) => (
-        ListView.builder(
+      body: Providers.connector<CounterCubit, int>(
+        (count) => (ListView.builder(
           itemCount: count < 0 ? count * -1 : count,
-          itemBuilder: (_, i) => SvgPicture.asset(
+          itemBuilder: (_, i) => (SvgPicture.asset(
             'lib/assets/svg/cat.svg',
             color: Colors.blue,
-            semanticsLabel: 'Cat'
-          )
-        )
-      )),
+            semanticsLabel: 'Cat',
+          )),
+        )),
+      ),
       floatingActionButton: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.end,
@@ -29,8 +29,7 @@ class CounterPage extends StatelessWidget {
             child: FloatingActionButton(
               heroTag: "btn1",
               child: const Icon(Icons.add),
-              onPressed: () =>
-                  context.bloc<CounterCubit>().add(),
+              onPressed: () => context.bloc<CounterCubit>().add(),
             ),
           ),
           Padding(
@@ -38,8 +37,7 @@ class CounterPage extends StatelessWidget {
             child: FloatingActionButton(
               heroTag: "btn2",
               child: const Icon(Icons.remove),
-              onPressed: () =>
-                  context.bloc<CounterCubit>().remove(),
+              onPressed: () => context.bloc<CounterCubit>().remove(),
             ),
           ),
           Padding(

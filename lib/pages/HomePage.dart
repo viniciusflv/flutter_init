@@ -13,11 +13,8 @@ class HomePage extends StatelessWidget with Utils {
       appBar: AppBar(
         leading: Padding(
           padding: edgeInsets('10'),
-          child: SvgPicture.asset(
-            'lib/assets/svg/cat.svg',
-            color: Colors.white,
-            semanticsLabel: 'Cat'
-          ),
+          child: SvgPicture.asset('lib/assets/svg/cat.svg',
+              color: Colors.white, semanticsLabel: 'Cat'),
         ),
         title: const Text('Home'),
         actions: <Widget>[
@@ -39,8 +36,7 @@ class HomePage extends StatelessWidget with Utils {
             child: FloatingActionButton(
               heroTag: "btn1",
               child: const Icon(Icons.add),
-              onPressed: () =>
-                  context.bloc<CounterCubit>().add(),
+              onPressed: () => context.bloc<CounterCubit>().add(),
             ),
           ),
           Padding(
@@ -48,8 +44,7 @@ class HomePage extends StatelessWidget with Utils {
             child: FloatingActionButton(
               heroTag: "btn2",
               child: const Icon(Icons.remove),
-              onPressed: () =>
-                  context.bloc<CounterCubit>().remove(),
+              onPressed: () => context.bloc<CounterCubit>().remove(),
             ),
           ),
           Padding(

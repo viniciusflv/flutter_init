@@ -14,6 +14,7 @@ class Utils {
       list.asMap().map((i, value) => MapEntry(i, cb(i, value))).values.toList();
 
   jsonParse(String jsonString) => jsonDecode(jsonString);
+
   /// value != null
   bool exists(value) => (value != null && value != '') ? true : false;
 
@@ -39,6 +40,7 @@ class Utils {
     buffer.write(hex.replaceFirst('#', ''));
     return Color(int.parse(buffer.toString(), radix: 16));
   }
+
   String colorsToHex(Color c) =>
       '#' +
       c
