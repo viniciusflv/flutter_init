@@ -55,4 +55,18 @@ dart-code.flutter
 * ### [StatefulWidget](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html)
   * A widget that has mutable state.
 
-## [Provider]()
+## [Providers](https://pub.dev/packages/flutter_bloc)
+
+* ### BlocObserver
+  * onEvent
+  * onChange
+  * onTransition
+  * onError
+
+* ### MultiBlocProvider
+* ### Cubit Provider / Bloc Provider
+
+## Dependencies to handle android stuff
+  * ### [flutter_launcher_name](https://pub.dev/packages/flutter_launcher_name)
+  * ### [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons)
+  * ### [flutter_native_splash](https://pub.dev/packages/flutter_native_splash)
